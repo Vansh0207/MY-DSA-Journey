@@ -1,0 +1,1 @@
+void subSequence(int s,vector<int> &arr,int idx,int sum,vector<int> &a,int n)
