@@ -89,7 +89,9 @@ int main()
     cin >> k;
 
     // int ans = BruteForce(s, k);
-    int ans = BetterApproach(s, k);
+    // int ans = BetterApproach(s, k);
+    int ans = OptimalApproach(s, k);
+
     cout << ans << endl;
 
     return 0;
