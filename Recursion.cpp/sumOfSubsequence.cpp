@@ -52,6 +52,26 @@ bool checkSum(int s, int idx, vector<int> &arr, int sum, int n)
     return false;
 }
 
+// Count all subsequences with sum K {1,2,1} s=2  count=2
+int counting(int s, int idx, vector<int> &arr, int sum, int n)
+{
+    if (idx == n)
+    {
+        if (sum == s)
+        {
+            return 1;
+        }
+        return 0;
+    }
+
+    // take
+    int l = counting(s + arr[idx], idx + 1, arr, sum, n);
+    // not take
+    int r = counting(s, idx + 1, arr, sum, n);
+
+    return l + r;
+}
+
 int main()
 {
     int n = 6;
@@ -60,11 +80,18 @@ int main()
     int sum = 10;
     vector<int> a;
 
+    // print the subsequences containing sum equals k
     subSequence(0, arr, 0, sum, a, n);
+
+    // check is subsequence of given sum exist or not
     if (checkSum(0, 0, arr, sum, n))
-        cout << "True";
+        cout << "True" << endl;
     else
-        cout << "false";
+        cout << "false" << endl;
+
+    // counting number of subsequence sum equal to k
+    int b = counting(0, 0, arr, sum, n);
+    cout << b << endl;
 
     return 0;
 }
