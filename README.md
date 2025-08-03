@@ -12,3 +12,4 @@ Topics Covered So far :
 7. Stack
 8. Recursion
 9. Binary Tree
+10. Binary Search Tree
